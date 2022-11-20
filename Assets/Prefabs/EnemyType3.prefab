@@ -107,7 +107,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7672699524367475517}
   - component: {fileID: 7672699524367475518}
-  - component: {fileID: 5834177788291066612}
   - component: {fileID: -7224088461142874126}
   m_Layer: 0
   m_Name: EnemyType3
@@ -150,22 +149,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &5834177788291066612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7672699524367475516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68521f5978aa3c24f9e817e2cf0a08a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  fireRate: 0.3
-  health: 10
-  score: 100
 --- !u!114 &-7224088461142874126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,9 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f1ead04698516468235946b83c4d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
-  keepOnScreen: 0
-  isOnScreen: 1
+  _radius: 1
+  _keepOnScreen: 1
+  _isOnScreen: 1
   camWidth: 0
   camHeight: 0
   offRight: 0

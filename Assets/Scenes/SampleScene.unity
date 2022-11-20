@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420034}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -243,22 +242,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d61ff5ddc7e32f541b412bd1a29940fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabEnemies:
-  - {fileID: 1623924920847797911, guid: ad1b69131cb6a2247bf9e8aaa0e54cb6, type: 3}
-  enemySpawnPerSecond: 0.5
-  enemyDefaultPadding: 1.5
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,9 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f1ead04698516468235946b83c4d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
-  keepOnScreen: 0
-  isOnScreen: 1
+  _radius: 1
+  _keepOnScreen: 1
+  _isOnScreen: 1
   camWidth: 0
   camHeight: 0
   offRight: 0
@@ -532,6 +515,7 @@ GameObject:
   - component: {fileID: 1201528801}
   - component: {fileID: 1201528803}
   - component: {fileID: 1201528804}
+  - component: {fileID: 1201528805}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Ship
@@ -585,13 +569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3573a60f97f881c4da0e0092823f26d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  rollMult: -45
-  pitchMult: 30
-  gameRestartDelay: 2
-  projectilePrefab: {fileID: 282497832126115838, guid: 4c8d74e6f4b3a5a43936bbb8874cac42, type: 3}
-  projectileSpeed: 40
-  _shieldLevel: 1
 --- !u!114 &1201528804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,15 +581,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f1ead04698516468235946b83c4d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 4.5
-  keepOnScreen: 0
-  isOnScreen: 1
+  _radius: 1
+  _keepOnScreen: 1
+  _isOnScreen: 1
   camWidth: 0
   camHeight: 0
   offRight: 0
   offLeft: 0
   offUp: 0
   offDown: 0
+--- !u!114 &1201528805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201528800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c42275fcd98e045a711491f29b5ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 30
+  _rollAngle: -45
+  _pitchAngle: 30
 --- !u!1 &1279081155
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,5 +812,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd15530ae9e84e148bd3e76300144f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPerSecond: 0.1
-  levelShown: 0
