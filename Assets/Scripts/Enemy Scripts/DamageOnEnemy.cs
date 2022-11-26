@@ -6,14 +6,14 @@ public class DamageOnEnemy : MonoBehaviour
 {
     /* private void OnCollisionEnter(Collision collision)
  {
-     GameObject bullet = collision.gameObject;
-     if (bullet.CompareTag("ProjectileShip"))
+     GameObject Projectile = collision.gameObject;
+     if (Projectile.CompareTag("ProjectileShip"))
      {
-         Destroy(bullet);
+         Destroy(Projectile);
          Destroy(gameObject);
      }
      else {
-         Debug.Log("Enemy hit by non-ProjectileShip: " + bullet.name);
+         Debug.Log("Enemy hit by non-ProjectileShip: " + Projectile.name);
      }
  }*/
 

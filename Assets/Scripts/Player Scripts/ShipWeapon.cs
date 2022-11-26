@@ -1,33 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class ShipWeapon : MonoBehaviour
 {
     private BoundsCheck _boundsCheck;
-    [SerializeField] private GameObject _projectilePrefab;
-    private GameObject _bullet;
+    [SerializeField] public GameObject _projectilePrefab;
+    private GameObject _Projectile;
     private Rigidbody _rigidbody;
     public float projectileSpeed = 40;
+
 
     private void Awake()
     {
         _boundsCheck = GetComponent<BoundsCheck>();
-        _bullet = Instantiate<GameObject>(_projectilePrefab);
-        _rigidbody = _bullet.GetComponent<Rigidbody>();
+
     }
 
-   /* void Update()
+    public void FireOn()
     {
-        if (_boundsCheck.offUp)
-        {
-            Destroy(gameObject);
-        }
-    }*/
-
-    public void TempFire()
-    {
-        _bullet.transform.position = transform.position;
+        GameObject _Projectile = Instantiate<GameObject>(_projectilePrefab);
+        _Projectile.transform.position = transform.position;
+        Rigidbody _rigidbody = _Projectile.GetComponent<Rigidbody>();
         _rigidbody.velocity = Vector3.up * projectileSpeed;
+      
     }
 }

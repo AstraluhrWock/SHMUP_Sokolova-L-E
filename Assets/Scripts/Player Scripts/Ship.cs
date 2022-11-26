@@ -1,3 +1,4 @@
+using SHRUM.ServiceLocator;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,11 +11,14 @@ public class Ship : MonoBehaviour
     //private DamageController _damageController;
     //private ReloadGame _reloadGame;
     private ShipWeapon _shipWeapon;
+    
+
 
 
     void Awake()
     {
         _playerMove = GetComponent<PlayerMove>();
+        _shipWeapon = GetComponent<ShipWeapon>();
         //_damageController = GetComponent<DamageController>();
 
         if (ship == null) // ship является переменной, а не gameObject
@@ -31,7 +35,7 @@ public class Ship : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _shipWeapon.TempFire();
+            _shipWeapon.FireOn();
         }
     }
 

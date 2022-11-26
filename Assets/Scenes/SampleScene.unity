@@ -516,6 +516,8 @@ GameObject:
   - component: {fileID: 1201528803}
   - component: {fileID: 1201528804}
   - component: {fileID: 1201528805}
+  - component: {fileID: 1201528806}
+  - component: {fileID: 1201528807}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Ship
@@ -605,6 +607,33 @@ MonoBehaviour:
   _speed: 30
   _rollAngle: -45
   _pitchAngle: 30
+--- !u!114 &1201528806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201528800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f0f8e08f7bd054383a6b8aa34d4b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectilePrefab: {fileID: 0}
+  projectileSpeed: 40
+--- !u!114 &1201528807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201528800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f54980c51932a7f478be15e10b4d234d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_projectilePrefab: {fileID: -6104244292035877024, guid: 4c8d74e6f4b3a5a43936bbb8874cac42, type: 3}
 --- !u!1 &1279081155
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,3 +841,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd15530ae9e84e148bd3e76300144f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shieldLevel: 4
