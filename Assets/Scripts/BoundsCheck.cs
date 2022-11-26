@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class BoundsCheck : MonoBehaviour
 {
-    public float radius = 1f;
-    public bool keepOnScreen = true;
+    [SerializeField] private float _radius = 1f;
+    [SerializeField] private bool _keepOnScreen = true;
+    [SerializeField] private bool _isOnScreen = true;
 
-    public bool isOnScreen = true;
     public float camWidth;
     public float camHeight;
-    public bool offRight, offLeft, offUp, offDown;
+    public bool offRight, offLeft, offUp, offDown = false;
+
+    public float Radius
+    {
+        get { return _radius; }
+        set { _radius = value; }
+    }
 
     private void Awake()
     {
@@ -21,42 +27,42 @@ public class BoundsCheck : MonoBehaviour
     private void LateUpdate()
     {
         Vector3 pos = transform.position;
-        isOnScreen = true;
+        _isOnScreen = true;
         offRight = offLeft = offUp = offDown = false;
 
-        if (pos.x > camWidth - radius)
+        if (pos.x > camWidth - _radius)
         {
-            pos.x = camWidth - radius;
-            isOnScreen = false;
+            pos.x = camWidth - _radius;
+            _isOnScreen = false;
             offRight = true;
         }
 
-        if (pos.x < -camWidth + radius)
+        if (pos.x < -camWidth + _radius)
         {
-            pos.x = -camWidth + radius;
-            isOnScreen = false;
+            pos.x = -camWidth + _radius;
+            _isOnScreen = false;
             offLeft = true;
         }
 
-        if (pos.y > camHeight - radius)
+        if (pos.y > camHeight - _radius)
         {
-            pos.y = camHeight - radius;
-            isOnScreen = false;
+            pos.y = camHeight - _radius;
+            _isOnScreen = false;
             offUp = true;
         }
 
-        if (pos.y < -camHeight + radius)
+        if (pos.y < -camHeight + _radius)
         {
-            pos.y = -camHeight + radius;
-            isOnScreen = false;
+            pos.y = -camHeight + _radius;
+            _isOnScreen = false;
             offDown = true;
         }
 
-        isOnScreen = !(offRight || offLeft || offUp || offDown);
-        if (keepOnScreen && !isOnScreen)
+        _isOnScreen = !(offRight || offLeft || offUp || offDown);
+        if (_keepOnScreen && !_isOnScreen)
         {
             transform.position = pos;
-            isOnScreen = true;
+            _isOnScreen = true;
             offRight = offLeft = offUp = offDown = false;
         }
     }
